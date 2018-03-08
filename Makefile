@@ -6,7 +6,7 @@
 #    By: fly <fly@flyy.fr>                          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/27 14:18:33 by fly               #+#    #+#              #
-#    Updated: 2018/03/08 03:23:55 by fly              ###   ########.fr        #
+#    Updated: 2018/03/08 03:25:39 by fly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ OBJS	= $(SRCS:%=$(BUILD_DIR)/%.o)
 
 CC			= g++
 INC_FLAGS	= $(addprefix -I,$(INC_DIRS))
-CCFLAGS	= $(INC_FLAGS) -W -Wall -Wextra -pedantic -std=c++11
+CCFLAGS		= $(INC_FLAGS) -W -Wall -Wextra -pedantic -std=c++11
 
 RM		= rm -f
 MKDIR	= mkdir -p
@@ -33,16 +33,16 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 
 all:	$(TARGET)
 
-$(TARGET):	$(OBJS)
+$(TARGET): $(OBJS)
 	$(CC) $(CCFLAGS) -o $(TARGET) $(OBJS)
 
 debug:
-		$(CC) $(CFLAGS) -g -o $(NAME).debug $(SRCS)
+	$(CC) $(CFLAGS) -g -o $(NAME).debug $(SRCS)
 
 clean:
 	$(RM) -r $(BUILD_DIR)
 
-fclean:	clean
+fclean: clean
 	$(RM) $(TARGET)
 
-re:	fclean all
+re: fclean all
