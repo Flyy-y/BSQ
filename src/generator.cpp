@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   generator.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fly <fly@flyy.fr>                          +#+  +:+       +#+        */
+/*   By: fly <fly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:20:45 by fly               #+#    #+#             */
-/*   Updated: 2018/03/08 01:36:17 by fly              ###   ########.fr       */
+/*   Updated: 2018/03/09 13:50:38 by fly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 using namespace std;
 
-float	random_float(void)
+float	random_float()
 {
 	return ((float)rand() / RAND_MAX);
 }
 
-Chars	get_chars(void)
+Chars	get_chars()
 {
 	Chars	c;
 
@@ -55,7 +55,7 @@ void	print_board(Chars c, int size_x, int size_y, float density)
 	}
 }
 
-int		generator(void)
+int		generator()
 {
 	int		size_x;
 	int		size_y;

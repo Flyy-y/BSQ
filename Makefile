@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fly <fly@flyy.fr>                          +#+  +:+       +#+         #
+#    By: fly <fly@student.42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/02/27 14:18:33 by fly               #+#    #+#              #
-#    Updated: 2018/03/08 03:25:39 by fly              ###   ########.fr        #
+#    Updated: 2018/03/09 16:42:06 by fly              ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,22 +22,22 @@ OBJS	= $(SRCS:%=$(BUILD_DIR)/%.o)
 
 CC			= g++
 INC_FLAGS	= $(addprefix -I,$(INC_DIRS))
-CCFLAGS		= $(INC_FLAGS) -W -Wall -Wextra -pedantic -std=c++11
+CFLAGS		= $(INC_FLAGS) -W -Wall -Wextra -pedantic -std=c++11 -m64
 
 RM		= rm -f
 MKDIR	= mkdir -p
 
 $(BUILD_DIR)/%.cpp.o: %.cpp
 	$(MKDIR) $(dir $@)
-	$(CC) $(CCFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all:	$(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CC) $(CCFLAGS) -o $(TARGET) $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
 debug:
-	$(CC) $(CFLAGS) -g -o $(NAME).debug $(SRCS)
+	$(CC) $(CFLAGS) -g -o $(TARGET).debug $(SRCS)
 
 clean:
 	$(RM) -r $(BUILD_DIR)

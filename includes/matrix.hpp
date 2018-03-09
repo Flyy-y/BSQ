@@ -3,42 +3,54 @@
 /*                                                        :::      ::::::::   */
 /*   matrix.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fly <fly@flyy.fr>                          +#+  +:+       +#+        */
+/*   By: fly <fly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:20:38 by fly               #+#    #+#             */
-/*   Updated: 2018/03/08 02:37:38 by fly              ###   ########.fr       */
+/*   Updated: 2018/03/09 15:47:19 by fly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATRIX_H
 # define MATRIX_H
 
+#include <vector>
+#include <fstream>
 #include "generator.hpp"
 
 class	Point	{
 	private:
-		int		x = 0;
-		int		y = 0;
+		int	x;
+		int	y;
 	public:
 		Point(int x, int y);
-		int		get_x(void);
-		int		get_y(void);
+		Point();
+		int	get_x();
+		int	get_y();
 };
 
 class	Square	{
 	private:
 		Point	pos;
-		int		size = 0;
+		int		size;
 	public:
 		Square(Point pos, int size);
-		int		get_size(void);
+		Square();
+		Point	get_pos();
+		int		get_size();
 };
 
-struct	Matrix {
-	Point	size;
-	Chars	chars;
-	char	**b;
-
+class	Matrix {
+	private:
+		bool							is_valid;
+		Point							size;
+		Chars							chars;
+		Square							biggest;
+		std::vector<std::vector<int>>	board;
+		void							retrieve_board(std::istream &in);
+		void							resolve();
+	public:
+		Matrix(std::string path);
+		Matrix();
 };
 
 #endif

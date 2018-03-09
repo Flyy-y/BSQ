@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   generator.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fly <fly@flyy.fr>                          +#+  +:+       +#+        */
+/*   By: fly <fly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 00:06:40 by fly               #+#    #+#             */
-/*   Updated: 2018/03/08 00:27:55 by fly              ###   ########.fr       */
+/*   Updated: 2018/03/09 13:50:43 by fly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GENERATOR_H
 
 #include <iostream>
-#include <time.h>
+#include <ctime>
 
 struct	Chars
 {
