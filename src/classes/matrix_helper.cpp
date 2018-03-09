@@ -6,7 +6,7 @@
 /*   By: fly <fly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 15:17:51 by fly               #+#    #+#             */
-/*   Updated: 2018/03/09 18:26:06 by fly              ###   ########.fr       */
+/*   Updated: 2018/03/09 18:30:20 by fly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,9 @@ void	Matrix::retrieve_board(istream &in)
 				board[cur_x].push_back(1);
 		}
 		if (cur_x == 0)
-			size = Point(0, cur_y);
+			size = Point(size.get_x(), cur_y);
 		else if (cur_y != size.get_y())
 			return;
-		size = Point(cur_x + 1, cur_y);
 	}
 	is_valid = true;
 }
