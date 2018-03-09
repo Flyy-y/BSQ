@@ -6,7 +6,7 @@
 /*   By: fly <fly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:20:47 by fly               #+#    #+#             */
-/*   Updated: 2018/03/09 16:36:20 by fly              ###   ########.fr       */
+/*   Updated: 2018/03/09 18:16:26 by fly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,21 @@ using namespace std;
 
 int	main(int argc, char **argv)
 {
-	Matrix t(string("test"));
-	if (argc == 2)
+	if (argc == 1)
+	{
+		Matrix m;
+		m.resolve();
+		m.print();
+	}
+	if (argc > 1)
+	{
 		if (string(argv[1]) == string("-g"))
 			return (generator());
+		for (int i = 1; i < argc; i++)
+		{
+			Matrix m(argv[i]);
+			m.resolve();
+			m.print();
+		}
+	}
 }

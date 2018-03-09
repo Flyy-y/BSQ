@@ -6,7 +6,7 @@
 /*   By: fly <fly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:20:45 by fly               #+#    #+#             */
-/*   Updated: 2018/03/09 13:50:38 by fly              ###   ########.fr       */
+/*   Updated: 2018/03/09 16:50:34 by fly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,20 @@ Chars	get_chars()
 
 void	print_board(Chars c, int size_x, int size_y, float density)
 {
-	char	*line;
+	string line("");
 
 	cout << size_x << c.empty << c.obstacle << c.filling << endl;
 	for (int i = 0; i < size_x; i++)
 	{
-		line = new char[size_x - 1];
+		line = "";
 		for (int j = 0; j < size_y; j++)
 		{
 			if (random_float() > density)
-				line[j] = c.empty;
+				line.append(&c.empty, 1);
 			else
-				line[j] = c.obstacle;
+				line.append(&c.obstacle, 1);
 		}
 		cout << line << endl;
-		delete[] line;
 	}
 }
 

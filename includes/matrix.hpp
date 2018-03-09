@@ -6,7 +6,7 @@
 /*   By: fly <fly@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/08 01:20:38 by fly               #+#    #+#             */
-/*   Updated: 2018/03/09 15:47:19 by fly              ###   ########.fr       */
+/*   Updated: 2018/03/09 18:14:14 by fly              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,12 @@ class	Matrix {
 		Square							biggest;
 		std::vector<std::vector<int>>	board;
 		void							retrieve_board(std::istream &in);
-		void							resolve();
+		void							retrieve_firstline(std::istream &in);
 	public:
 		Matrix(std::string path);
 		Matrix();
+		void							resolve();
+		void							print();
 };
 
 #endif
